@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#modelCar{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+
+.inputDiv{
+  position: absolute;
+  top:50px;
+  left:50%;
+  transform: translate(-50%, -50%);
+    display: flex;
+  flex-direction: column;
+}
+
+.inputDiv label{
+  margin-bottom: 10px;
+}
+.inputDiv span{
+  margin-left: 10px;
+  cursor: pointer;
+}
+.inputDiv span:hover{
+text-decoration: underline;  
+color: rgb(87, 87, 232);
+}
