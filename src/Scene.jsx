@@ -10,6 +10,7 @@ Title: McLaren F1 1993 By Alex.Ka.🤍🖤
 import React, { useLayoutEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
+import { gsap } from 'gsap'
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/scene.gltf')
@@ -18,9 +19,13 @@ export function Model(props) {
   let scene = useThree(state => state.scene)
   console.log(scene)
   useLayoutEffect(() => {
-    scene.rotation.set(0.3,0,0)
-    camera.position.set(0,0,6)
-
+    scene.rotation.set(0.6,4.8,0)
+    // camera.position.set(0,0,6)
+    gsap.fromTo(camera.position,{x:0,y:0,z:14},{x:0,y:0,z:5,duration:2,ease:'power1.out'},"id" )
+    // gsap.fromTo(scene.rotation,{x:0,y:-4,z:0},{x:0,y:0,z:0,duration:1.2} )
+    gsap.to(scene.rotation,{x:0.6,y:5.2,z:0,duration:2,ease:"power1.out"} ,"id")
+    gsap.to(scene.rotation,{x:0.2,y:5.9,z:0,duration:2,ease:"power1.inOut"},'key' )
+    gsap.fromTo(camera.position,{x:0,y:0,z:5},{x:0,y:0,z:3.7,duration:2,ease:"power1.inOut"},'key' )
   }, [])
   return (
     <group {...props} dispose={null}>
