@@ -8,7 +8,7 @@ const Car = () => {
     <div id='modelCar'>
         <Canvas shadows >
             <ambientLight/>
-            <spotLight position={[3,5,4]} intensity={1}/>
+            {/* <spotLight position={[3,5,4]} intensity={1}/> */}
             {/* <directionalLight color="yellow" position={[0, 0, 5]} /> */}
             <Environment  near={100} far={1000} resolution={2560} blur={0}preset="sunset"/>
             <Suspense fallback={null}>
