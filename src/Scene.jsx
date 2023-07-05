@@ -17,6 +17,22 @@ export function Model(props) {
 
   let camera = useThree(state => state.camera)
   let scene = useThree(state => state.scene)
+  loader.setPath('Iphone/textures');
+  // loader.load(
+  //       [
+  //         'px.png',
+  //         'nx.png',
+  //         'py.png',
+  //         'ny.png',
+  //         'pz.png',
+  //         'nz.png'
+  //       ],
+  //       (texture) => {
+  //         scene.background = texture;
+  //         // Additional code to create and render the scene using the texture
+  //       }
+  //     );
+   
   console.log(scene)
   useLayoutEffect(() => {
     scene.rotation.set(0.6,4.8,0)
